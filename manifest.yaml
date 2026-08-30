@@ -1,0 +1,45 @@
+# manifest.yaml — source of truth for RESULTS.md
+# status: pending | falsified | constrained | out-of-scope
+# theorem: Lean theorem name once status is `falsified`, else null
+
+- id: many-worlds
+  name: "Many-Worlds (Everett)"
+  class: no-collapse
+  status: pending
+  theorem: null
+  note: "No known falsification criterion — empirically equivalent to bare unitary QM"
+
+- id: grw
+  name: "GRW"
+  class: objective-collapse
+  status: pending
+  theorem: null
+  note: "Falsifiable via collapse-rate (lambda) bound vs. decoherence-persistence experiments"
+
+- id: csl
+  name: "CSL"
+  class: objective-collapse
+  status: pending
+  theorem: null
+  note: "Falsifiable via lambda, rC bounds vs. optomechanics/matter-wave interferometry"
+
+- id: diosi-penrose
+  name: "Diósi–Penrose"
+  class: objective-collapse-gravity
+  status: pending
+  theorem: null
+  note: "Falsifiable via collapse-time vs. superposition mass/size experiments"
+
+- id: local-friendliness
+  name: "Extended Wigner's Friend / Local Friendliness"
+  class: observer-dependent-facts
+  status: constrained
+  theorem: null
+  note: "Literature reports violation of local-friendliness inequalities (Bong et al.); not yet a Lean theorem"
+
+- id: bohmian
+  name: "Bohmian mechanics"
+  class: hidden-variables
+  status: out-of-scope
+  theorem: null
+  note: "Empirically equivalent to standard QM; visualization only, not falsifiable by this method"
