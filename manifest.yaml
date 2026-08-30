@@ -10,18 +10,25 @@
   note: "No known falsification criterion — empirically equivalent to bare unitary QM"
 
 - id: grw
-  name: "GRW"
+  name: "GRW (original parameters)"
   class: objective-collapse
   status: pending
   theorem: null
-  note: "Falsifiable via collapse-rate (lambda) bound vs. decoherence-persistence experiments"
+  note: "lambda=1e-16 s^-1 at rC=1e-7m not yet excluded (Wolf et al., STE-QUEST, arXiv:2211.15412, 2022)"
 
 - id: csl
-  name: "CSL"
+  name: "CSL (GRW-parameter regime)"
   class: objective-collapse
   status: pending
   theorem: null
-  note: "Falsifiable via lambda, rC bounds vs. optomechanics/matter-wave interferometry"
+  note: "Weak (GRW-scale) parameter regime not yet excluded; interferometric bounds ~5e-6 s^-1 at rC=1e-7m are many orders above it"
+
+- id: csl-adler
+  name: "CSL (Adler parameters)"
+  class: objective-collapse
+  status: falsified
+  theorem: adler_csl_falsified_by_igex_xray_bound
+  note: "lambda=4e-8+-2 s^-1 at rC=1e-7m excluded by IGEX X-ray bound of 6.8e-12 s^-1 (Piscicchia et al. 2017, arXiv:1710.01973); confirmed by Wolf et al. 2022, arXiv:2211.15412"
 
 - id: diosi-penrose
   name: "Diósi–Penrose"

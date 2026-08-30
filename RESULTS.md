@@ -24,8 +24,9 @@ edit the manifest, not this file directly.
 | Interpretation | Class | Status | Basis / theorem |
 |---|---|---|---|
 | Many-Worlds (Everett) | no-collapse | ⏳ Pending | No known falsification criterion — empirically equivalent to bare unitary QM |
-| GRW | objective-collapse | ⏳ Pending | Falsifiable via collapse-rate (lambda) bound vs. decoherence-persistence experiments |
-| CSL | objective-collapse | ⏳ Pending | Falsifiable via lambda, rC bounds vs. optomechanics/matter-wave interferometry |
+| GRW (original parameters) | objective-collapse | ⏳ Pending | lambda=1e-16 s^-1 at rC=1e-7m not yet excluded (Wolf et al., STE-QUEST, arXiv:2211.15412, 2022) |
+| CSL (GRW-parameter regime) | objective-collapse | ⏳ Pending | Weak (GRW-scale) parameter regime not yet excluded; interferometric bounds ~5e-6 s^-1 at rC=1e-7m are many orders above it |
+| CSL (Adler parameters) | objective-collapse | ✅ Falsified | adler_csl_falsified_by_igex_xray_bound |
 | Diósi–Penrose | objective-collapse-gravity | ⏳ Pending | Falsifiable via collapse-time vs. superposition mass/size experiments |
 | Extended Wigner's Friend / Local Friendliness | observer-dependent-facts | ⚠️ Constrained | Literature reports violation of local-friendliness inequalities (Bong et al.); not yet a Lean theorem |
 | Bohmian mechanics | hidden-variables | 🚫 Out of scope | Empirically equivalent to standard QM; visualization only, not falsifiable by this method |
