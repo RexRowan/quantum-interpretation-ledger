@@ -1,7 +1,7 @@
 # Database
 
 This repo does not vendor the experiment/proposal bibliography. It's
-maintained separately in `quantum-interpretations-survey` and referenced
+maintained separately in `Experimental-Tests-of-Quantum-Interpretations` and referenced
 by entry when a falsification hypothesis is formalized.
 
 Each falsification theorem's comment should cite the specific survey
