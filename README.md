@@ -14,7 +14,7 @@ it *can* do:
    determinism, and any model parameters) as a Lean structure.
 2. Take an experimental result as an asserted hypothesis — Lean can't
    measure anything, so empirical facts enter as premises, sourced from
-   [quantum-interpretations-survey](../quantum-interpretations-survey).
+   [quantum-interpretations-survey](../Experimental-Tests-of-Quantum-Interpretations).
 3. Mechanically check whether an interpretation's axioms + a given
    experimental hypothesis derive `False` (**falsified**) or remain
    consistent (**survives**).
