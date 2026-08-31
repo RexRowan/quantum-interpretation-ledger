@@ -1,0 +1,94 @@
+# manifest.yaml — source of truth for RESULTS.md
+# status: pending | falsified | constrained | out-of-scope
+# theorem: Lean theorem name once status is `falsified`, else null
+
+- id: many-worlds
+  name: "Many-Worlds (Everett)"
+  class: no-collapse
+  status: pending
+  theorem: null
+  note: "No known falsification criterion — empirically equivalent to bare unitary QM"
+
+- id: grw
+  name: "GRW (original parameters)"
+  class: objective-collapse
+  status: pending
+  theorem: null
+  note: "lambda=1e-16 s^-1 at rC=1e-7m not yet excluded (Wolf et al., STE-QUEST, arXiv:2211.15412, 2022)"
+
+- id: csl
+  name: "CSL (GRW-parameter regime)"
+  class: objective-collapse
+  status: pending
+  theorem: null
+  note: "Weak (GRW-scale) parameter regime not yet excluded; interferometric bounds ~5e-6 s^-1 at rC=1e-7m are many orders above it"
+
+- id: csl-adler
+  name: "CSL (Adler parameters)"
+  class: objective-collapse
+  status: falsified
+  theorem: adler_csl_falsified_by_igex_xray_bound
+  note: "lambda=4e-8+-2 s^-1 at rC=1e-7m excluded by IGEX X-ray bound of 6.8e-12 s^-1 (Piscicchia et al. 2017, arXiv:1710.01973); confirmed by Wolf et al. 2022, arXiv:2211.15412"
+
+- id: diosi-penrose
+  name: "Diósi–Penrose"
+  class: objective-collapse-gravity
+  status: pending
+  theorem: null
+  note: "Falsifiable via collapse-time vs. superposition mass/size experiments"
+
+- id: local-friendliness
+  name: "Extended Wigner's Friend / Local Friendliness"
+  class: observer-dependent-facts
+  status: constrained
+  theorem: null
+  note: "Literature reports violation of local-friendliness inequalities (Bong et al.); not yet a Lean theorem"
+
+- id: bohmian
+  name: "Bohmian mechanics"
+  class: hidden-variables
+  status: out-of-scope
+  theorem: null
+  note: "Empirically equivalent to standard QM; visualization only, not falsifiable by this method"
+
+- id: cosmic-ray-anisotropy
+  name: "Beane-Davoudi-Savage cosmic-ray lattice anisotropy"
+  class: lattice-discretization
+  status: pending
+  theorem: null
+  note: "Falsifiable via UHE cosmic-ray anisotropy/cutoff (Pierre Auger data); no specific bound formalized against a candidate lattice spacing yet (Beane, Davoudi, Savage, Eur. Phys. J. A 50, 148, 2014)"
+
+- id: lorentz-violation
+  name: "Discretization-induced Lorentz invariance violation"
+  class: lattice-discretization
+  status: pending
+  theorem: null
+  note: "Falsifiable via energy-dependent photon arrival-time dispersion (Fermi-LAT GRB timing); no specific bound formalized against a candidate discretization model yet"
+
+- id: holographic-noise
+  name: "Hogan holographic spacetime graininess"
+  class: lattice-discretization
+  status: constrained
+  theorem: null
+  note: "Fermilab Holometer (Chou et al. 2017, arXiv:1703.08503) reports a null result for the originally proposed model; not yet encoded as a Lean falsification — closing it needs the specific reported bound, not a recalled summary"
+
+- id: bekenstein-bound
+  name: "Bekenstein-bound finite information density"
+  class: computational-constraint
+  status: constrained
+  theorem: null
+  note: "Bound holds in all tested regimes (Bekenstein, Phys. Rev. D 23, 287, 1981) but is a weak discriminator for simulation theory specifically — also just standard thermodynamics, doesn't distinguish simulated from non-simulated substrates"
+
+- id: rendering-resolution
+  name: "Observation-dependent rendering-resolution limit"
+  class: computational-constraint
+  status: pending
+  theorem: null
+  note: "Weakest entry in this family: no proposed experiment cleanly separates this from standard quantum measurement/decoherence theory; no rigorous formalization found"
+
+- id: sim-nonfalsifiable-arguments
+  name: "Bostrom trilemma / fine-tuning-as-evidence"
+  class: philosophical-argument
+  status: out-of-scope
+  theorem: null
+  note: "Probabilistic/philosophical arguments, not physical claims; no experiment bears on either (Bostrom, Philosophical Quarterly 53, 2003; standard fine-tuning literature repurposed as sim-evidence)"
