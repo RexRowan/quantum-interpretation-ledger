@@ -1,54 +1,59 @@
 # quantum-interpretation-ledger
 
-A Lean 4 formal **falsification checker** for interpretations of quantum
-mechanics.
+A formal falsification checker, written in Lean 4, for axiom-sets bearing on
+physical interpretation questions — checked against a self-contained
+reference database of experiments and proposals.
 
-## What this is — and isn't
+This repo does **not** treat "which interpretation is right" as a single
+question. It tracks separate **axiom-set families**, each with its own
+claims, predicted signatures, datasets, and falsification status. A claim is
+only in scope here if it is at least in principle falsifiable — claims that
+are unfalsifiable by construction (Bohmian trajectory visualization, the
+simulation-argument-proper, fine-tuning-as-evidence) are recorded for
+completeness but flagged `unfalsifiable` rather than checked.
 
-This is **not** a tool that proves the multiverse exists. No experiment
-currently distinguishes Many-Worlds from bare unitary QM, and a proof
-assistant can't manufacture that distinction out of deduction rules. What
-it *can* do:
+## Axiom-set families
 
-1. Encode each interpretation's axioms (ontology, dynamics, locality,
-   determinism, and any model parameters) as a Lean structure.
-2. Take an experimental result as an asserted hypothesis — Lean can't
-   measure anything, so empirical facts enter as premises, sourced from
-   [quantum-interpretations-survey](../quantum-interpretations-survey).
-3. Mechanically check whether an interpretation's axioms + a given
-   experimental hypothesis derive `False` (**falsified**) or remain
-   consistent (**survives**).
+| Family | Docs | Lean source | Status |
+|---|---|---|---|
+| Objective collapse (GRW / CSL / Diósi-Penrose) | [`docs/objective-collapse.md`](docs/objective-collapse.md) | [`Ledger/ObjectiveCollapse.lean`](Ledger/ObjectiveCollapse.lean) | active, falsifiable |
+| Simulation-theory signatures | [`docs/simulation-theory.md`](docs/simulation-theory.md) | [`Ledger/SimulationTheory.lean`](Ledger/SimulationTheory.lean) | active, mixed falsifiability |
 
-The result is an elimination argument, not a confirmation: interpretations
-that survive every check we've formalized so far aren't "proven true,"
-they're "not yet ruled out." See [`RESULTS.md`](./RESULTS.md) for current
-status and [`docs/ARCHITECTURE.md`](./docs/ARCHITECTURE.md) for the design
-rationale.
+Previously the objective-collapse reference data lived in a separate repo
+([`Experimental-Tests-of-Quantum-Interpretations`](https://github.com/RexRowan/Experimental-Tests-of-Quantum-Interpretations),
+now reduced to a standalone interactive demo). That data has been migrated
+in full into `docs/objective-collapse.md` and `Ledger/ObjectiveCollapse.lean`
+— this repo has no external data dependency.
 
-## Layout
+## Structure
+
+- `Ledger/Claim.lean` — the core `Claim` structure and `Status` type shared
+  by every axiom-set family.
+- `Ledger/ObjectiveCollapse.lean` — the objective-collapse claim list.
+- `Ledger/SimulationTheory.lean` — the simulation-theory claim list.
+- `Ledger/Checker.lean` — generic falsification-checking functions that
+  operate over any `List Claim`.
+- `docs/*.md` — human-readable bibliography tables mirroring each Lean file,
+  used as the reference database.
+
+## Claim schema
+
+Every claim, regardless of family, is recorded as:
 
 ```
-Ledger/                  Lean 4 source
-  Core.lean               Interpretation / falsification definitions
-  Interpretations/        One file per tracked interpretation
-db/                       Pointer to the survey database (not vendored)
-docs/ARCHITECTURE.md      Design rationale
-scripts/gen_results.py    Regenerates RESULTS.md's table from manifest.yaml
-manifest.yaml             Source of truth: status per interpretation
-RESULTS.md                Human-readable status page (generated table)
+postulate            -- the physical claim being tested
+predictedSignature   -- what a positive test would look like
+datasetOrObservatory -- what could confirm or rule it out
+status               -- open | falsified | corroborated | unfalsifiable
+reference             -- paper / arXiv id / observatory report
 ```
 
-## Build
+This is deliberately the same schema across families so `Ledger/Checker.lean`
+never needs to know which family it's operating on.
 
-```sh
+## Building
+
+```
+lake update
 lake build
 ```
-
-## Contributing
-
-See [`CONTRIBUTING.md`](./CONTRIBUTING.md) for how to add a new
-interpretation or wire up a new falsification theorem.
-
-## License
-
-MIT — see [`LICENSE`](./LICENSE).
