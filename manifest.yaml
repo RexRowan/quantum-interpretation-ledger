@@ -72,6 +72,13 @@
   theorem: null
   note: "Fermilab Holometer (Chou et al. 2017, arXiv:1703.08503) reports a null result for the originally proposed model; not yet encoded as a Lean falsification — closing it needs the specific reported bound, not a recalled summary"
 
+- id: raqm-palmer
+  name: "Rational Quantum Mechanics (Palmer)"
+  class: lattice-discretization
+  status: pending
+  theorem: null
+  note: "Discretizes Hilbert Space to rational squared-amplitudes/phases (basis parameter L), giving finite qubit information capacity N_max ~ 200-1000 (estimated via Diosi-Penrose gravitational collapse energy) above which algorithms needing maximal N-qubit entanglement (e.g. Shor's) lose quantum advantage; falsifiable in principle via factoring of a sufficiently large RSA integer (e.g. 2048-bit) using genuinely maximally-entangled qubit counts exceeding N_max, but N_max estimate is order-of-magnitude only and 'maximal Hilbert-space spread' is not independently operationalized, so a null result (no successful factoring) is not yet a clean confirmation vs. ordinary noise/engineering limits (Palmer, arXiv:2510.02877, 2026)"
+
 - id: bekenstein-bound
   name: "Bekenstein-bound finite information density"
   class: computational-constraint
